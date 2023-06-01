@@ -1,0 +1,480 @@
+
+/***** NEW PRIORITY *****/
+.newPriorityButton {
+  display: inline-block;
+  font-size: 50px;
+  position: relative;
+  left: 80px;
+  top: 15px;
+  width: 50px;
+  height: 20px;
+  z-index: 100;
+}
+
+.newPriorityDiv {
+  display: none;
+  border: 1px solid blue;
+  border-radius: 10px;
+  width: 600px;
+  background-color:white;
+  padding: 10px;
+  position: relative;
+  left: 620px;
+  bottom: 20px;
+}
+
+/***** RECENT COMMENTS *****/
+.priorityComment {
+  font-weight:bold;
+}
+
+.priorityCommentCompletedDiv {
+  position: relative;
+  height: 0;
+  width: 0;
+  left: 540px;
+  bottom: 40px;
+}
+
+.priorityCommentCurrentDiv {
+  position: relative;
+  height: 0;
+  width: 0;
+  left: 10px;
+  bottom: 40px;
+}
+
+.priorityCommentTitle {
+  position: relative;
+  left: 200px;
+  font-size: 30px;
+}
+
+/***** COMPLETED *****/
+.priorityCompletedTitle {
+  text-align:center;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.priorityCompletedCreated {
+  font-size: 16px;
+}
+
+.priorityCompletedFinished {
+  font-size: 16px;
+}
+
+.priorityCompletedHeader {
+  position: relative;
+  right: 35px;
+  font-size: 30px;
+  color: green;
+}
+
+.priorityCompleteTd {
+  width: 600px;
+  border: 2px solid gray;
+  background-color: #d1d1d1;
+  border-radius: 50px;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+.priorityRecentFinish {
+  font-size: 120px;
+  color: gray;
+  font-weight:bold;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  opacity: 0.08;
+  transform: rotate(-30deg);
+}
+
+.prioritiesCompletedDirLink {
+  cursor:pointer;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.prioritiesCompletedDirLink:hover {
+  color: #826c22;
+  background-color: #e6e3dc;
+}
+
+/***** MENU *****/
+.flash_notice_priority {
+  position: relative;
+  padding: 5px;
+  border: 2px solid red;
+  left: 670px;
+  bottom: 20px;
+}
+
+.prioritiesCompletedLink {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 10px;
+  width: 130px;
+}
+
+.prioritiesCompletedLink:hover {
+  background-color: #67b3f5;
+}
+
+.priorityMenuButtons {
+  position: relative;
+  right: 20px;
+  display: flex;
+  justify-content:center;
+}
+
+.prioritiesBackToTop {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  height: 23px;
+  width: 23px;
+  border-radius: 40px;
+  background-color:white;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  top: 11px;
+  left: 30px;
+}
+
+.prioritiesBackToTop:hover {
+  background-color: #6993ff;
+}
+
+.prioritiesTopArrow {
+  color:black;
+  font-size: 20px;
+  position: relative;
+  top: 4px;
+}
+
+.prioritiesDirLink {
+  cursor:pointer;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.prioritiesRefresh {
+  border: none;
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+  left: 3px;
+  background-color: transparent;
+}
+
+.prioritiesRefresh:hover {
+  transform: rotate(45deg);
+  color: #6993ff;
+  cursor: pointer;
+  position: relative; 
+  right: 10px;
+}
+
+.prioritiesMenuComments {
+  position: relative;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 10px;
+  width: 130px;
+  position: relative;
+  left: 18px;
+  top: 10px
+}
+
+.prioritiesBackButton {
+  font-size: 14px;
+  position:relative;
+  width: 130px;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.prioritiesBackButton:hover {
+  background-color: #67b3f5;
+}
+
+.prioritiesBackDiv {
+  position: relative;
+  height: 0;
+  width: 0;
+  left: 610px;
+  bottom: 5px;
+}
+
+.prioritiesMenuComments:hover {
+  background-color: #67b3f5;
+}
+
+.prioritiesDirLink:hover {
+  background-color: #dde1eb;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.priorityMenuButtonsDiv {
+  min-height: 200px;
+  position: sticky;
+}
+
+.priorityMenu {
+  position: fixed;
+  border: 1px solid black;
+  padding: 5px;
+  width: 600px;
+  height: 100%;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  overflow: hidden;
+}
+
+/***** INDEX *****/
+.priorityDescrLabel{
+  font-size: 14px; 
+  font-weight: bold;
+}
+
+.priorityHeaderDiv {
+  height: 40px;
+  width: 800px; 
+  text-align: center;
+  position: relative;
+  left: 570px;
+  bottom: 20px;
+}
+
+.priorityEmailField {
+  position: relative;
+  bottom: 30px;
+  right: 17px;
+  width: 100px;
+}
+
+.priorityHeader {
+  position: relative;
+  bottom: 20px;
+  left: 17px;
+  font-size: 30px; 
+  color: black; 
+}
+
+.priorityStatusDiv {
+  height: 0; 
+  text-align: center;
+  position:relative; 
+  bottom: 50px;
+}
+
+.centerDiv {
+  text-align:center;
+}
+
+.priorityMenuDiv {
+  height: 60%; 
+  white-space: nowrap;
+  overflow-y:scroll;
+  overflow-x:scroll;
+  resize: both;
+  z-index: 100;
+  width: 650px;
+  cursor: ns-resize;
+}
+
+.priorityMenuTitle {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.priorityUpdateTd {
+  background-color: white;
+  display:none;
+}
+
+.priorityListTitle {
+  text-align:center; 
+  font-size: 20px;
+  width: 480px; 
+  position: relative; 
+  left: 70px;
+  line-height: 22px;
+}
+
+.priorityListCompleteBtn {
+  border: 3px dotted green ;
+  color:white;
+  padding: 5px;
+  width: 350px;
+  border-radius: 50px;
+  cursor:pointer;
+  font-size: 20px;
+  background-color:green;
+  text-align:center;
+  position: relative;
+  top: 10px;
+}
+
+.priorityCommentArea {
+  width: 168px;
+  height: 12px;
+}
+
+.priorityListCompleteBtn:hover {
+  background-color:#034001;
+}
+
+.priorityListStatus {
+  font-size: 25px;
+}
+
+.priorityListPriority {
+  color: blue;
+  font-size:30px;
+  position: relative;
+  bottom: 20px;
+  height: 0px;
+}
+
+.priorityCommentsDelete {
+  font-size: 8px; 
+}
+
+.priorityCommentsDelete:hover {
+  font-size: 7px;
+  color: white;
+  background-color: transparent;
+}
+
+.priorityCommentsDiv{
+  display:none;
+  background-color:#d9d9d9;
+  border: 1px solid grey;
+  width: 620px;
+  word-wrap: break-word;
+  position: relative; 
+  top: 10px;
+}
+
+.priorityCommentBody {
+  white-space: pre-wrap;
+}
+
+.priorityAddCommentDiv {
+  background-color: #ebebeb;
+  padding: 5px; border: 1px solid black;
+  width: 600px
+}
+
+.priorityListAuthor {
+  position: relative;
+  top: 30px;
+}
+
+.priorityListDescr {
+  font-size: 13px;
+  padding: 5px;
+  position: relative;
+  white-space: pre-wrap;
+}
+
+.priorityListEdit {
+  height: 0px;
+  position: relative;
+  bottom: 24px;
+  left: 560px;
+}
+
+.priorityListCancel {
+  position: relative;
+  bottom: 275px;
+  left: 520px;
+}
+
+.priorityFilterTag {
+  width: 150px;
+}
+
+.priorityFilterButton {
+  border-radius: 5px;
+  padding: 1px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.priorityFilterButton:hover {
+  background-color:#67b3f5;
+}
+
+.priorityCommentsButton {
+  position: relative;
+  width: 130px;
+}
+
+.priorityCommentsArrow {
+  position:relative;
+  right: 28px;
+}
+
+.priorityListUpdated {
+  position: relative;
+  bottom: 20px;
+  float: right;
+  height: 0px;
+}
+
+.priorityListCreated {
+  position: relative;
+  height: 0px;
+}
+
+.priorityListTd {
+  width: 600px;
+  border: 2px solid gray;
+  background-color: #d5ddf5;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.priorityList {
+  border-spacing: 5px;
+  position:relative;
+  left: 600px;
+  bottom: 20px;
+  width: 670px;
+}
+
+.priorityListLink {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.priorityListLink:hover {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+} 
+
+.priorityListDelete {
+  background-color: #ff9e9e;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  left: 470px;
+}        
+

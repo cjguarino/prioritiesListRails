@@ -1,0 +1,191 @@
+=javascript_include_tag 'priorities/index'
+=stylesheet_link_tag 'priorities', :media => 'all'
+
+%body{style: "background-color:#d1d1d1"}
+
+- flash.each do |name, msg|
+  %label.flash_notice_priority
+    = msg
+
+%div.prioritiesBackDiv
+  = button_to "<~ Back", root_path, class: "prioritiesBackButton"
+
+-# MENU
+%div.priorityMenu
+  %div.centerDiv{style: "height: 30px;"}
+    %label.priorityMenuTitle{style: "position: relative; top: 5px;"}
+      Menu
+  %hr{style: "height: 2px"}/
+  %br/
+  %div.priorityMenuDiv
+    -@list.each do |li|
+      #{li.priority}.
+      %a.prioritiesDirLink{id: "directory_link_#{li.id}", :style => "color: #{Priority.get_font_color_by_status(li)}"}
+        = li.title.titleize
+      %br/
+  %br/
+  %div.centerDiv.priorityMenuButtonsDiv
+    = form_tag priorities_organize_priorities_path do
+      = submit_tag "Organize", style: "left: 0; top: 0",class: "prioritiesOrganizeButton prioritiesMenuComments", title: "Organize priority numbers"
+    %br/
+    %hr{style: "height: 2px"}/
+    %br/
+    = form_tag priorities_index_path do
+      = select_tag "chosen_status", options_for_select(@status_choose, @chosen_status), class: "priorityFilterTag"
+      = select_tag "chosen_assignee", options_for_select(@assignees_choose, @chosen_assignee), class: "priorityFilterTag"
+      = submit_tag "Filter", class: "priorityFilterButton"
+    %br/
+    %hr{style: "height: 2px"}/
+    %div.priorityMenuButtons
+      =button_to "↻", priorities_index_path, class: "prioritiesRefresh", title: "Refresh"
+      =button_to "Completed Priorities", priorities_completed_path(:year => Date.today.year, :month => Date.today.month), class: "prioritiesCompletedLink"
+      =button_to "Recent Comments", priorities_recent_comments_path, class: "prioritiesMenuComments"
+      %a.prioritiesBackToTop{style: "float: right", :title => "Back to Top"}
+        %p.prioritiesTopArrow ^
+
+-# HEADER
+%div.priorityHeaderDiv
+  %p.priorityHeader
+    Current Priorities
+    %a.newPriorityButton.priorityListLink{title: "New Priority"}
+      +
+  %label.priorityEmailField 
+    = form_tag priorities_send_current_email_path do
+      %label
+        = text_field_tag :email, '', size: 10
+        = hidden_field_tag :year, @year
+        = hidden_field_tag :month, @month
+        @monmouth.com
+      = submit_tag "Send"
+
+-# NEW PRIORITY
+%div.newPriorityDiv
+  = form_tag priorities_new_path do
+    = hidden_field_tag :author, session[:cas_user]
+    = hidden_field_tag :status, "New"
+    %tr.priorityListTr
+      %td.priorityListTd.newPriorityDiv{id: "priority_new_list"}
+        %h1
+          New Priority
+        %p
+          Title:
+          = text_field_tag :title, '',size: 60
+          &ensp;
+          Priority:
+          = number_field_tag :priority, '', min: 1, max: 998, size: 3
+        %p
+          Description:
+        = text_area_tag :description, '',size: "50x3"
+        &emsp;
+        %label{style: "float: right"}
+          Assignee:
+          = select_tag "assignee", options_for_select(@assignees)
+        %div.centerDiv
+          = submit_tag "Create", class: "priorityListLink"
+
+-# CURRENT PRIORITIES
+%table.priorityList
+  - @list.each do |li|
+    %tr.priorityListTr
+      %td.priorityListTd{id: "priority_list_#{li.id}", :style => "background-color: #{Priority.get_color_by_status(li)}"}
+        %h5.priorityListTitle
+          = li.title.titleize
+        %label.priorityListPriority
+          = li.priority
+        %label.priorityListLink.priorityListEdit{id: "priority_list_edit_button_#{li.id}"}
+          Edit
+        %p.priorityListDescr
+          %label.priorityDescrLabel Priority Description:
+          = li.description
+
+        -#CommentsDiv
+        %button.priorityCommentsButton{id: "priorityCommentsButton#{li.id}"} 
+          Show/Hide Comments
+        %br/
+        %div.priorityCommentsDiv{id: "priorityCommentsDiv#{li.id}"}
+          %div.priorityShowComment{id: "showComments#{li.id}"}
+          - li.comments.each do |comment|
+            %label{style: "color: #{Priority.get_user_color(comment.author)}"} #{comment.author}
+            = "(#{comment.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y %I:%M %p")}): "
+            - if comment.comment.split("\n").size > 1
+              %br/
+            - if comment.author =~ /links engine/i
+              %label.priorityCommentBody{style: "opacity: 0.6"} #{comment.comment}
+            - else
+              %label.priorityCommentBody{style: "font-weight:bold"} #{comment.comment}
+            -if comment.author == session[:cas_user] || comment.author =~ /links engine/i
+              = link_to "🗑", priorities_delete_comment_path(:id => comment.id), class: "priorityCommentsDelete", title: "Delete Comment"
+            %br/
+          %div.priorityAddCommentDiv
+            = form_tag priorities_add_comment_path do         
+              %label Add Comment #{hidden_field_tag :priority_id, li.id}
+              = hidden_field_tag :author, session[:cas_user] 
+              = text_area_tag :comment, '', size: "72x6", class: "commentFieldArea", id: "commentFieldArea#{li.id}"
+              = submit_tag "Post", class: "postCommentButton", id: "postComment#{li.id}"
+        -#CommentsDivEnd
+
+        - if li.status == "Pushed"
+          %div.centerDiv
+            = button_to "Deployed?", priorities_complete_path(:id => li.id), class: "priorityListCompleteBtn", title: "Transfer to the Completed Priorities table?", id: "complete#{li.title}"
+        %label.priorityListAuthor
+          Author:
+          %label{style: "font-weight: bold; color: #{Priority.get_user_color(li.author)}"}
+            = li.author
+        %p{style: "text-align:right"}
+          Assignee:
+          %label{style: "font-weight: bold; color: #{Priority.get_user_color(li.assignee)}"}
+            = li.assignee
+        %label.priorityListCreated
+          Created At:
+          = li.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%B #{li.created_at.day.ordinalize}, %Y %I:%M %p")
+        %div.priorityStatusDiv
+          %label
+            Status:
+            %br/
+          %label.priorityListStatus{style: "color: #{Priority.get_font_color_by_status(li)}"}
+            = li.status
+        %label.priorityListUpdated
+          Updated At:
+          = li.updated_at.in_time_zone("Eastern Time (US & Canada)").strftime("%B #{li.updated_at.day.ordinalize}, %Y %I:%M %p")
+       
+      -#UPDATE CURRENT PRIORITIES
+      = form_tag priorities_update_path do
+        %tr.priorityListTr
+          %td.priorityListTd.priorityUpdateTd{id: "priority_update_list_#{li.id}", :style => "background-color: white; height: 100px"}
+            = hidden_field_tag :id, li.id
+            = hidden_field_tag :author, session[:cas_user]
+            Edit Priority:
+            = text_field_tag :title, li.title, size: 60
+            %p
+              Priority:
+              = number_field_tag :priority, li.priority, min: 1, max: 998, size: 3
+            %p
+              Description:
+            = text_area_tag :description, li.description, size: "50x3"
+            %p
+              Status:
+              = select_tag "status", options_for_select(@status_array, li.status)
+            %p
+              Assignee:
+              = select_tag "assignee", options_for_select(@assignees, li.assignee)
+            %p
+              Created At:
+              = li.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%B #{li.updated_at.day.ordinalize}, %Y %I:%M %p")
+              &emsp;|||&emsp;
+              Updated At:
+              = li.updated_at.in_time_zone("Eastern Time (US & Canada)").strftime("%B #{li.updated_at.day.ordinalize}, %Y %I:%M %p")
+            = submit_tag "Update", class: "priorityListLink"
+            %a.priorityListCancel.priorityListLink{id: "priority_list_edit_button_#{li.id}"}
+              Cancel
+            =link_to "Delete", priorities_delete_path(:id => li.id), class: "priorityListLink priorityListDelete", id: "delete#{li.title}"
+
+:javascript
+  $( document ).ready(function( $ ) {
+    priorityIndexReady();
+  });
+
+:css
+  #error_explanation { 
+    display: none;
+  }
+

@@ -1,0 +1,43 @@
+
+%button#startAnimation Start
+
+%div#animationHiddenDiv{style: "display: none; text-align: center"}
+  %p#animation{style: "font-size: 28px; font-weight: bold"}
+    ⬤
+
+:javascript
+  var $animationForward = true;
+  var $current = 0
+
+  $( document ).on('click', '#startAnimation', function () {
+    startAnimation();
+  });
+  
+  function startAnimation() {
+    $('#animationHiddenDiv').show();
+    var $animationInterval = setInterval(function() { go(); }, 50);
+  }
+  
+  function go() {
+    if ($animationForward == true) {
+      $('#animation').css('transform','rotateY(' + $current + 'deg)');
+      $current = $current + 5;
+      if ($current > 180) {
+        $animationForward = false;
+      }
+    } else {
+      $('#animation').css('transform','rotateY(' + $current + 'deg)');
+      $current = $current - 5;
+      if ($current < 5) {
+        $animationForward = true;
+      }
+    }
+    if ($current == 90) {
+      if ($animationForward == true) {
+        $('#animation').css('color','blue');
+      } else {
+        $('#animation').css('color','black');
+      }
+    }
+  }
+

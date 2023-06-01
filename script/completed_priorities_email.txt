@@ -1,0 +1,256 @@
+------------- COMPLETED PRIORITIES: May, 2022 -------------
+-------------------------------------
+Title: Patch Charge records for service update in Links
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:12 PM
+-------------------------------------
+Title: Specialized billing report Ewing Twp #36307
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:12 PM
+-------------------------------------
+Title: Update services/zones for MTT bills MI report (Ckt loop sid)
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: 477 Files for second half of 2021
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Gethub tool - add Javascript libraries to Mtt bills MI in Links
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Provided Acct Num for invalid tract codes on fixed voice subscription FCC 477
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Edit Package in Links
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Rewrite the code that generates 477 Broadband Deployment file
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Added Sid 735 to TLS Reconciliation for AP
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Text to Email HPBX Automation to include MM messages
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Autobiller for invoice display of overages
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Diagnose & Correct the issue causing the upload of Intl files to fail
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update code that uploads the Yamal fiiles for CABS invoices
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Reconcile old SS7 Quest/Lumen cdrs
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Lumen Reconciliation Updates
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Add Sid to Package Definition to fix issue when services would not add
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update 499 Report in Links to correct error in calculating the yearly report
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Subpoena request for archived CDRs from 2018
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Calc Fixed Charges / Compute Phone Bills Refactor Testing
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Add error message to Invoice Sanity when Sorted2call crashes on daily run
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Calc Fixed Charges / Compute Phone Bills Upgrade
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Recipients for Callerid Consistency Report billing email
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Migrate Calc/Compute/Reload to Links
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Permanent fix to Shared Block of Minutes character string
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Add Compute Phone bills GUI to Links
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Inv Sanity to correct error message reporting of customer run list
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Ckt data entry fields in Links Start/Stop to allow longer ckt ids
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Add recovery CDR file to Linker Log
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Compute Phone bills Minutes Block Display
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Least Cost routing to notify when a bad line of data is in rate deck
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: List of T1 customers for KWL
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Invoice Sanity Error on Billing Run 1/24/19 for February invoices
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Links Engine to add 'Select All' button to Invoice Holds in Print Invoice
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Quest/Lumen Reconciliation to read TLS Recovery CDR's
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Evaluate calls for idno #32789 to verify if they were unique or duplicate
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Updated Records in Caller ID to correct orphan calls for 8884509685
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update Invoice Sanity to run from correct directory on 1st
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Updated Prog1 to restore the daily usage table
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Updates to Links & Calc/Compute for Shared Block customers
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Add to Chron, code that is manually run for 499 reports on Links
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Added BAN to Quest/Lumen Carrier Reconciliation
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update to Linker to handle TLS Recovery CDRs
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Fixed MTT Bills MI for 1st Qtr 2022 caused by Moving Services from MTT to MI
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Move Daily Usage Report from Prog1 ro Links
+Description: 
+Assignee: cguarino
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Fixed Zones Report for 1st Qtr 202 caused by Moving Services from MTT to Mi
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Verified Factor Report for 1st Qtr 2022 is accurate in Links
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Manually Move Services from MTT to Mi
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Update to Putty/Telephone to restore Usage Reports
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Added BAN to Carrier Data Table for Carrier Reconciliation
+Description: 
+Assignee: JTP
+Finished: May 2nd, 2022 02:17 PM
+-------------------------------------
+Title: Migrate Sorted2call to Links
+Description: 
+Assignee: JTP
+Finished: May 4th, 2022 09:04 AM
+-------------------------------------
+Title: Move Usage Report for (1) customer to Links
+Description: Move usage reports for daily and monthly from prog1 and putty to links engine
+Assignee: cguarino
+Finished: May 5th, 2022 12:37 PM

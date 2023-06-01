@@ -1,0 +1,373 @@
+------------- CURRENT PRIORITIES -------------
+-------------------------------------
+Title: Update Quest/Lumen reconcilation  to correct unmatched/unbilled calls
+Description: 
+Priority: 1
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Invoice Sanity to Report invoices with no call details
+Description: The issue of no ccall data being displayed on the invoice was caused by an issue in the
+Links Engine Ccall Model, where there is a second method which also constructs the ccall
+table name, instead of always using the "a", this one still goes through the Misc Table
+Logic.  
+Priority: 2
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Remove T1 USF Amounts from 499 (Annual & Qrtly) reports on Links
+Description: 
+Priority: 3
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Quest/Lumen Carrier Reconciliation Updates Part 1
+Description: 
+Priority: 4
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Margin in Links for Local & Resale Services
+Description: Links Engine has the following line in models/service.rb:
+
+ResaleFactor = 0.8296
+
+When the times comes when we changed the price of Resale
+Lines (the Jun Invoice), it looks like the software in
+StartStop Services was well written so that we just have
+to get a new markup value and change this value.
+Ie if the new market value was changed to 25 percent,
+we would change this value to 0.7500
+
+Priority: 5
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Script to update charge records for all local resale services 
+Description: 
+Priority: 6
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update create service tool  to fix issue where stax & ftax are set to nil
+Description:  customer 28770 crashing in compute phone bills.
+   The issue was the customer had a new package
+  sid    descr
+  1016    Voice Plus Lte Package
+
+  and the stable, taxable columns in the services table for sid 1016 were set to nil
+  We used the edit services turned over last week to fix this
+Priority: 7
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Update Modify to allow monetary value of service to be updated
+Description: 
+Priority: 8
+Status: Development
+Assignee: cguarino
+-------------------------------------
+Title: Update to Modify when stopping a package to stop charge records
+Description: 
+Priority: 9
+Status: Development
+Assignee: cguarino
+-------------------------------------
+Title: Update to Modify when adding a stop date to an active package to notify user
+Description: 
+Priority: 10
+Status: Development
+Assignee: cguarino
+-------------------------------------
+Title: Update Modify Tool to handle resale lines & circuits
+Description: this update should include the line charges, features, circuits, and adjusting the start/stop dates of local lines and special circuits.
+Priority: 11
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Update Modify to allow start/stop dates to be changed 
+Description: 
+Priority: 12
+Status: Development
+Assignee: cguarino
+-------------------------------------
+Title: Order Equipment on monmouth.com website
+Description: 
+Priority: 13
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Update Modify on Links to handle large volume of mods within a billing cycle
+Description: When modify in Links Engine is used alot, as it was this past month due do the
+T1 conversion work, it is too slow and unreliable.  The two major issues which will
+lead to a major refactor are noted in the comments
+Priority: 14
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Automate Uploading of Vz rate decks for Canada & OCUSA
+Description: Need to integrate into our rate deck handling that Verizon periodically updates Canada
+rates and OCUSA rates as well as the multiple per month International Rate Decks.
+Need to handle assembling all these pieces into a current rate deck for Verizon.
+All these rate decks are not similar in format
+Priority: 15
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Subpoena code to select usage type, inbound and/or outbound
+Description:  A ticket needs to be open to have command line option to show inbound or outbound only cdrs.
+   Currently  cdrs are presented for both inbound and outbound.
+Priority: 16
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: SIP Gateway Reconciliation Updates
+Description: 
+Priority: 17
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Create tool to map telco/circuit to Vz Ban/BillDate in Vz Bills Db
+Description: Verizon Bills/Links3 needs a database that keeps track of an entity such as a telephone number
+of circuit and maps it to the latest BAN/billdate it was associated with.
+Priority: 18
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Create International Table to be used for Accounting purposes
+Description: 
+Priority: 19
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Modify least cost routing to generate a table to be used by the carrier reconciler
+Description: 
+Priority: 20
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Cnam program to correct billing  of fax & conference room  usage
+Description: Tie together the orphan cname program with the orphan fax/conference room program (all use line output) and make the
+  
+Priority: 21
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update the Time Zone Differece for Invoice Sanity & Compute Phone Bills
+Description: a ticket will have to be created to fix the
+time difference UTC in Start/Stop Service with compute phone bills using local time for the
+invoice sanity test.
+Priority: 22
+Status: Development
+Assignee: JTP
+-------------------------------------
+Title: Update Compute Phone Bills to remove taxes for cancelled services
+Description: 
+Priority: 23
+Status: Need More Info
+Assignee: JTP
+-------------------------------------
+Title: Update Links to remove an old pkg charge before writing a new pkg charge
+Description: 
+Priority: 24
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Automate 477 
+Description: 
+Priority: 25
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Automate Uploading Lumen Rate Decks
+Description: Lumen Toll Free Rate Decks are sent via email in Excel format. 
+Priority: 26
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Scraper Program to automatically download Verizon Rate Decks
+Description: write a Scraper program to secure Verizon Rate Decks automatically from Verizon's portal. New Verizon rate decks are available a number of times a month and need to be automatically populated in Programming's database.
+Priority: 27
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Create Service Tool to fix issue when units are set to quantity 
+Description: When Accounting added the new service for MS Teams, there was a bug where quantity was correctly added to the units.
+   The bugs in the GUI for new services need to be identified and fixed
+Priority: 28
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Demand Services for new customers - Please update Links
+Description: When a new account is activated in Links, Links should automatically activate all demand service bundles on the account  at their default rates
+Priority: 29
+Status: New
+Assignee: cguarino
+-------------------------------------
+Title: Update to calc_fixed_charges to prevent invalid charges
+Description: Per JTP there is an area of calc_fixed_charges that will not check for exemptions if the connection gets lost and is re-established. This causes accounts to be incorrectly billed for state sales tax. We need to update the code to correct this
+Priority: 30
+Status: Need More Info
+Assignee: JTP
+-------------------------------------
+Title: Add Mobile App to Hard Coded list of Autobillable Services
+Description: Add Mobile app sid 272 to hard coded list of auto-billable services
+Priority: 31
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Generate Email Notification whe Vz data download files fail
+Description: 
+Priority: 32
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Accounting Tools Page
+Description: 
+Priority: 33
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Convert Hard Coded list  of Autobillable Services  to a Database Table
+Description: 
+Priority: 34
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Clean up Disk Space on Dadmin
+Description: periodically John cleans up disk space on dadmin
+Priority: 35
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Verizon Ld Carrier bill #21001228 Reconciliation
+Description: 
+Priority: 36
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: UNE T1 Reconciliation Updates Needed
+Description: 
+Priority: 37
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Resale Reconciliation updates needed (450 786 6690)
+Description: 
+Priority: 38
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: TLS Reconciliation updates needed
+Description: 
+Priority: 39
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Reconciliation of Special Access T1 Circuits
+Description: 
+Priority: 40
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Map billing for Directory Assistance for Resale/Unep Usage
+Description: Directory assistance calls are not being billed to two new services for resale directory assistance, sig 727. and for unep directory assistance calls. When this ticket is worked Accounting needs to create a new sid for unep directory assistance calls
+Priority: 41
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Refactor compute phone bills and calc fixed charges for NJ Sales Tax 
+Description: 
+Priority: 42
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Fix Tool that calculates USF Rate - part 2
+Description: When calculating the USF rate for blocks of minutes, sid 776. The tool should get the block information from the line items and/or the customer records in the database regarding the block size and the rate that the block is calculated.
+
+The tool should also be updated to account for USF credits provided to customers, currently the tool does not include any credits for USF.
+Priority: 43
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Invoice Sanity to check for Invoices that failed Compute
+Description: 
+Priority: 44
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Call Detail Feature for customers with minute blocks
+Description: For calls that are included in the block of minutes, Accounting is requesting that the charges associated with those calls are removed from the call detail. For any overage minutes Accounting would like those calls to display the appropriate charges in the call detail section. 
+Priority: 45
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Contract Expiration - PC Marketing - Account #35893
+Description: 
+Priority: 46
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update to Sorted to Ccall when a day crashes
+Description: if a day crashes on sorted2ccall, the code was updated to retry the day that crashed. if a second attempt at the day crashes, then sorted2ccall should send a message in invoice sanity that the day crashed on the sorted2ccall run and advise what day crashed for the month. Sorted2ccall should then continue on its run to completion.
+Priority: 47
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Active DID's CSV file request
+Description: Please provide a csv file with the following information for customers with active DID's.
+
+account number, customer name, type of service, total active DID's, total DID's billed
+
+The type of service can be found in the Numbers table in the IVAD Production database
+Priority: 48
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Create Service Tool in Links not pulling MI sids through
+Description: 
+Priority: 49
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update autobiller to differentiate billing for Standard CRM & Legal CRM
+Description: CRM Solution, sid 283 & Legal CRM Solution as separate services. Currently, both CRM services are in the snap shot as 'crm'. see notes for additional information
+Priority: 50
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Update Chron For Yearly CDR's
+Description: John advised that we need the Chron to create a directory for the yearly cdrs.
+
+Per my conversation with John he pave the following path
+
+/var/billing/raw_data/old
+Priority: 51
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: New Feature Automatically update CRM when billing is activated
+Description: When services are activated in Links an API would add a note to the corresponding type case of contract in the CRM that states "billing activated".
+
+This API would be called from Links Rails and use the customer account number(idno) and package id as unique identifiers. If no type case of contracts exits in the CRM for this customer the API would create the case type of contract and add the note. 
+Priority: 52
+Status: New
+Assignee: JTP
+-------------------------------------
+Title: Double credit error in Links when stopping a service
+Description: account #32101 cancelled their services. We stopped the package as of 12/4/18. The pro-rated credit should have been $373.94. The January invoice has a credit of $747.88, double what the credit should be. 
+Priority: 53
+Status: Need More Info
+Assignee: JTP
+-------------------------------------
+Title: Misapplied Sip Gateway & Local Regulatory Fees
+Description: #36136, customer was assessed SIP Gateway State & Local Regulatory Fees on their February invoice. I looked at their services and could not find any services that would incur this fee. Additional comments in notes
+Priority: 54
+Status: Need More Info
+Assignee: JTP
+-------------------------------------
+Title: Auto-biller error with usage quantity 
+Description: Holding ticket until we can recreate this issue, additional notes in comments
+Priority: 55
+Status: Need More Info
+Assignee: JTP

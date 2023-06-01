@@ -1,0 +1,62 @@
+=javascript_include_tag 'priorities/index'
+=stylesheet_link_tag 'priorities', :media => 'all'
+
+-# MENU
+%div.priorityMenu
+  %div.centerDiv
+    %label.priorityMenuTitle
+      Menu
+    %hr{style: "height: 0.5px"}/
+  %br/
+  %div.priorityMenuDiv
+    -@list.each do |li|
+      %a.prioritiesDirLink{id: "directory_link_#{li.id}"}
+        = li.title.titleize
+      %br/
+  %br/
+  %hr{style: "height: 1px"}/
+  %br/
+  = form_tag priorities_completed_path do
+    = select_tag "chosen_assignee", options_for_select(@assignees_choose, @chosen_assignee), class: "priorityFilterTag"
+    = select_year(@date, start_year: 2010, end_year: Date.today.year)
+    = select_month(@date)
+    = submit_tag "Filter", class: "priorityFilterButton"
+  %br/
+  %hr{style: "height: 1px"}/
+  %div.priorityMenuButtons
+    =button_to "↻", priorities_completed_path, class: "prioritiesRefresh", title: "Refresh"
+    =button_to "Current Priorities", priorities_index_path, class: "prioritiesCompletedLink"
+    =button_to "Recent Comments", priorities_recent_comments_path, class: "prioritiesMenuComments"
+    %a.prioritiesBackToTop{style: "float: right", :title => "Back to Top"}
+      %p.prioritiesTopArrow ^
+
+-# HEADER
+%div.priorityHeaderDiv
+  %p.priorityCompletedHeader
+    Completed Priorities
+
+-# COMPLETED PRIORITIES
+%table.priorityList
+  - @list.each do |li|
+    %tr.priorityListTr
+      %td.priorityCompleteTd{id: "priority_list_#{li.id}", :style => "text-align:center"}
+        %h1.priorityCompletedTitle
+          = li.title.titleize
+        %label.priorityFinishedDescription
+          = li.description
+          %br/
+        %label.priorityCompletedAuthor
+          Author:
+          = li.author
+        %p
+          Programmer:
+          %strong
+            = li.assignee
+        %label.priorityCompletedCreated
+          Started:
+          = li.started.in_time_zone("Eastern Time (US & Canada)").strftime("%B #{li.started.day.ordinalize}, %Y %I:%M %p")
+        &nbsp;|||&nbsp;
+        %label.priorityCompletedFinished
+          Finished:
+          = li.finished.in_time_zone("Eastern Time (US & Canada)").strftime("%B #{li.finished.day.ordinalize}, %Y %I:%M %p")
+

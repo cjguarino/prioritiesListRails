@@ -1,0 +1,42 @@
+=stylesheet_link_tag "priorities", :media => "all"
+
+%body{style: "background-color: #d3deed"}
+
+%h1.priorityCommentTitle
+  Recent Comments
+
+%div.priorityCommentCurrentDiv
+  = button_to "Current Priorities", priorities_index_path, class: "prioritiesBackButton"
+
+%div.priorityCommentCompletedDiv
+  = button_to "Complete Priorities", priorities_completed_path, class: "prioritiesBackButton"
+%hr{style: "height: 1px; width: 700px"}/
+
+- unless @comments.empty?
+  - current_day = @comments[0].created_at
+  %h1
+    %ins
+      = current_day.in_time_zone("Eastern Time (US & Canada)").strftime("%A %B #{current_day.day.ordinalize}, %Y")
+  - @comments.each do |comment|
+    %p
+      -if current_day.day != comment.created_at.day
+        - current_day = comment.created_at
+        %h1
+          %ins 
+            = comment.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%A %B #{comment.created_at.day.ordinalize}, %Y")
+      - begin
+        %label.priorityComment{style: "color: #{Priority.get_user_color(comment.author)}"} #{comment.author}
+        = "(#{comment.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y %I:%M %p")}): "
+        -if comment.author =~ /links engine/i
+          %label.priorityComment{style: "color: #{Priority.get_user_color(comment.author)}"} #{comment.comment}
+        - else
+          %label.priorityComment 
+            = comment.comment
+        on&nbsp;
+        %a{href: "../priorities/index#priority_list_#{comment.priority_id}"}
+          = Priority.find(comment.priority_id).title.titleize[0,70]
+          %label 
+            \...
+      -rescue
+- else
+  %h1 No Active Conversations to Display
